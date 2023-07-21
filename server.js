@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import userRoutes from "./routes/userRouter.js";
+import movieRoutes from "./routes/movieRouter.js";
 import connectDB from "./db/connectDB.js";
 
 const app = express();
@@ -17,6 +18,7 @@ dotenv.config();
 app.use(express.json());
 
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/movie", movieRoutes);
 
 async function start() {
   try {
